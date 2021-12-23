@@ -20,7 +20,7 @@ const addTransaction =(transaction)=>{
 
 };
 
-
+const balance = transactions.reduce((acc, currVal) => (currVal.type === 'Expense' ? acc - currVal.amount : acc + currVal.amount), 0);
 
 return(
 
@@ -28,7 +28,8 @@ return(
 
 deleteTransaction,
 addTransaction,
-transactions
+transactions,
+balance
 
 }} > 
     {children}
